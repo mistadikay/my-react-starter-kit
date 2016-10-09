@@ -1,0 +1,23 @@
+{
+  "collectCoverageFrom": [
+    "src/api/*.js",
+    "src/components/**/*.js",
+    "!src/components/**/index.js",
+    "src/store/**/*.js",
+    "!src/store/index.js"
+  ],
+  "coverageDirectory": "coverage/unit",
+  "moduleFileExtensions": [
+    "js"
+  ],
+  "moduleDirectories": [
+    "node_modules"
+  ],
+  "moduleNameMapper": {
+    "^.+\\.css$": "identity-obj-proxy",
+    "^~\/components.+$": "<rootDir>/test/stubs/component.js",
+    "^~\/api$": "<rootDir>/test/stubs/api.js",
+    "^~\/types$": "<rootDir>/src/types.js",
+    "^.+\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/test/stubs/image.js"
+  }
+}

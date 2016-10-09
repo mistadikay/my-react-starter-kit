@@ -1,0 +1,132 @@
+extends:
+  - tough/config/common
+  - tough/config/node
+  - tough/config/react
+  - tough/config/browser
+  - tough/config/esnext
+plugins:
+  - flowtype
+globals:
+  Promise: true
+settings:
+  # local/context rules
+  import/resolver:
+    webpack:
+      config: webpack.config.babel.js
+  flowtype:
+    onlyFilesWithFlowAnnotation: true
+rules:
+  no-extra-parens:
+    - 2
+    - functions
+  react/jsx-no-literals:
+    - 0
+  no-undef:
+    - 2
+  react/jsx-curly-spacing:
+    - 2
+    - always
+    -
+      allowMultiline: true
+      spacing:
+        objectLiterals: never
+  react/jsx-tag-spacing:
+    - 2
+    -
+      closingSlash: never
+      beforeSelfClosing: always
+      afterOpening: never
+  id-length:
+    - 2
+    -
+      min: 2
+      exceptions:
+        - x
+        - y
+        - z
+        - e
+        - i
+  no-magic-numbers:
+    - 2
+    -
+      ignore:
+        - -1
+        - 0
+        - 1
+        - 2
+  no-invalid-this: 0
+  node/no-missing-require: 0
+  node/no-unpublished-require: 0
+
+  # maybe fix in the future
+  react/jsx-filename-extension: 0
+  react/jsx-sort-props: 0
+  no-undefined: 0
+
+  # probably PR this
+  operator-linebreak:
+    - 2
+    - after
+    -
+      overrides:
+        ?: ignore
+        :: ignore
+  camelcase: 0
+  func-style: 0
+  no-ternary: 0
+  object-curly-newline: 0
+  immutable/no-mutation: 0
+  import/prefer-default-export: 0
+  react/no-unused-prop-types: 0
+  arrow-parens: 0
+  no-confusing-arrow: 0
+  no-use-before-define:
+    - 2
+    -
+      functions: false
+      classes: true
+
+  # flow stuff
+  flowtype/boolean-style:
+    - 2
+    - boolean
+  flowtype/define-flow-type: 1
+  flowtype/delimiter-dangle:
+    - 2
+    - never
+  flowtype/generic-spacing:
+    - 2
+    - never
+  flowtype/no-primitive-constructor-types: 2
+  flowtype/no-weak-types:
+    - 1
+    -
+      Function: false
+  flowtype/object-type-delimiter:
+    - 2
+    - comma
+  flowtype/require-parameter-type: 1
+  flowtype/require-return-type:
+    - 1
+    - always
+  flowtype/require-valid-file-annotation: 2
+  flowtype/semi:
+    - 2
+    - always
+  flowtype/space-after-type-colon:
+    - 1
+    - always
+  flowtype/space-before-generic-bracket:
+    - 2
+    - never
+  flowtype/space-before-type-colon:
+    - 2
+    - never
+  flowtype/type-id-match:
+    - 2
+    - "^([A-Z][a-z0-9]+)+$"
+  flowtype/union-intersection-spacing:
+    - 2
+    - always
+  flowtype/use-flow-type: 1
+  flowtype/valid-syntax: 1
