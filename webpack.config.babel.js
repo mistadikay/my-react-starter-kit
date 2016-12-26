@@ -14,7 +14,6 @@ const { cssLoader, postcssLoader } = require('./config/loaders');
 const srcPath = path.join(__dirname, 'src');
 const isProduction = process.env.NODE_ENV === 'production';
 const destinationPath = path.join(__dirname, 'build');
-const urbitClientPath = path.join(__dirname, 'node_modules/urbit-client/src');
 
 module.exports = {
   devtool: isProduction ? 'source-map' : 'eval-source-map',
@@ -58,10 +57,7 @@ module.exports = {
       // *.js => babel + eslint
       {
         test: /\.js$/,
-        include: [
-          path.resolve(__dirname, 'src'),
-          urbitClientPath
-        ],
+        include: path.resolve(__dirname, 'src'),
         loaders: isProduction
           ? [
             'babel-loader?cacheDirectory',
