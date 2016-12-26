@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
@@ -139,10 +138,6 @@ module.exports = {
         // Name of Webpack Stats JSON file that will be generated if `generateStatsFile` is `true`.
         // Relative to bundles output directory.
         // statsFilename: 'stats.json'
-      }),
-      new CleanWebpackPlugin([ 'build' ], {
-        root: __dirname,
-        verbose: true
       }),
       new ExtractTextPlugin({
         filename: '[name].[hash].css'
