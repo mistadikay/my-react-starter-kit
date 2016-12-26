@@ -11,8 +11,7 @@ globals:
 settings:
   # local/context rules
   import/resolver:
-    webpack:
-      config: webpack.config.babel.js
+    babel-module: {}
   flowtype:
     onlyFilesWithFlowAnnotation: true
 rules:

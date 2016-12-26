@@ -11,6 +11,17 @@
     "stage-2",
     "react"
   ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "extensions": [ ".js", ".jsx" ],
+        "alias": {
+          "~": "./src"
+        }
+      }
+    ]
+  ],
   "env": {
     "production": {
       "presets": [

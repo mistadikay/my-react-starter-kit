@@ -49,12 +49,6 @@ module.exports = {
       './src/polyfills',
       './src/index'
     ],
-  resolve: {
-    alias: {
-      '~': srcPath
-    },
-    extensions: [ '.js', '.json' ]
-  },
   performance: {
     hints: isProduction ? 'warning' : false
   },
