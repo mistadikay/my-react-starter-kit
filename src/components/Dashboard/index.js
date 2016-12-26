@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import Component from './Dashboard';
-import { getExampleData, getExampleLoadingStatus } from '~/store/selectors/example';
-import { requestExample } from '~/store/actions/example';
+import { actions, getExampleData, getExampleLoadingStatus } from '~/state/example';
 
 const mapStateToProps = (state) => ({
   data: getExampleData(state),
@@ -9,7 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  requestExample
+  requestExample: actions.requestExample
 };
 
 export default connect(

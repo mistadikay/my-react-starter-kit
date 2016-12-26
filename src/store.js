@@ -5,8 +5,8 @@ import ensureFSAMiddleware from '@meadow/redux-ensure-fsa';
 import immutableStateInvariant from 'redux-immutable-state-invariant';
 import createSagaMiddleware from 'redux-saga';
 
-import rootReducer from './reducers';
-import rootSaga from './sagas';
+import rootReducer from '~/state';
+import rootSaga from '~/sagas';
 
 // side effects
 // https://github.com/yelouafi/redux-saga

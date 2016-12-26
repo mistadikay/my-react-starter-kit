@@ -8,6 +8,7 @@ ___
 - [x] redux
   - [x] basic setup
   - [x] add actual actions/reducers/sagas
+  - [ ] normalizr?
 - [x] webpack
   - [x] basic setup
   - [ ] refactor and cleanup
@@ -19,7 +20,8 @@ ___
   - [x] stylelint
   - [x] flow
   - [x] jest for unit-tests
-  - [x] jest + phantomjs + node-horseman for integration tests
+  - [ ] redux state/sagas tests
+  - [ ] jest + phantomjs + node-horseman for integration tests
 - [x] react-router (3 for now)
   - [x] basic setup
   - [ ] split bundle
