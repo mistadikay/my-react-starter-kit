@@ -4,11 +4,14 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 
 const { cssLoader, postcssLoader } = require('./config/loaders');
+const utilsManifest = require('./build/utils-manifest.json');
+const reactManifest = require('./build/react-manifest.json');
 
 const srcPath = path.join(__dirname, 'src');
 const isProduction = process.env.NODE_ENV === 'production';
@@ -34,19 +37,12 @@ module.exports = {
     path: destinationPath,
     publicPath: '/'
   },
-  entry: isProduction
-    ? {
-      vendor: [
-        './src/polyfills',
-        'react',
-        'react-dom'
-      ],
-      app: './src/index'
-    }
-    : [
+  entry: {
+    app: [
       './src/polyfills',
       './src/index'
-    ],
+    ]
+  },
   performance: {
     hints: isProduction ? 'warning' : false
   },
@@ -142,7 +138,6 @@ module.exports = {
       new ExtractTextPlugin({
         filename: '[name].[hash].css'
       }),
-      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
       new webpack.optimize.UglifyJsPlugin(
         {
           compress: { warnings: false },
@@ -150,6 +145,14 @@ module.exports = {
         }
       )
     ],
+    new webpack.DllReferencePlugin({
+      context: '.',
+      manifest: utilsManifest
+    }),
+    new webpack.DllReferencePlugin({
+      context: '.',
+      manifest: reactManifest
+    }),
     new FriendlyErrorsWebpackPlugin(),
     new CopyWebpackPlugin([
       {
@@ -162,15 +165,10 @@ module.exports = {
       }
     ]),
     new InlineEnviromentVariablesPlugin(),
-    new HtmlWebpackPlugin({
-      template: 'src/assets/index.html',
-      chunksSortMode(chunk) {
-        if (chunk.names[0] === 'vendor') {
-          return -1;
-        }
-
-        return 1;
-      }
-    })
+    new HtmlWebpackPlugin({ template: 'src/assets/index.html' }),
+    new AddAssetHtmlPlugin([
+      { filepath: require.resolve('./build/utils.dll.js'), hash: true },
+      { filepath: require.resolve('./build/react.dll.js'), hash: true }
+    ])
   ]
 };

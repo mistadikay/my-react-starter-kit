@@ -11,6 +11,7 @@ ___
   - [ ] normalizr?
 - [x] webpack
   - [x] basic setup
+  - [ ] smarter polyfilling
   - [ ] refactor and cleanup
 - [x] add http-client (whatwg-fetch)
 - [x] testing
