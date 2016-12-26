@@ -3,37 +3,27 @@ import mirrorCreator from 'mirror-creator';
 
 // action types
 export const types = mirrorCreator([
-  'EXAMPLE_REQUEST'
+  'EXAMPLE_REQUEST_START',
+  'EXAMPLE_REQUEST_END'
 ]);
 
 // action creators
 export const actions = {
-  requestExample: createAction(types.EXAMPLE_REQUEST, null, () => ({ isLoading: true })),
-  onRequestExampleEnd: createAction(types.EXAMPLE_REQUEST, null, () => ({ isLoading: false }))
+  requestExample: createAction(types.EXAMPLE_REQUEST_START),
+  onRequestExampleEnd: createAction(types.EXAMPLE_REQUEST_END)
 };
 
 // reducer
-export const initialState = {
-  data: undefined,
-  isLoading: false
-};
+export const initialState = null;
 export default handleActions({
-  [types.EXAMPLE_REQUEST]: (state, { payload, error, meta }) => {
-    if (meta.isLoading || error) {
-      return {
-        ...state,
-        isLoading: meta.isLoading
-      };
+  [types.EXAMPLE_REQUEST_END]: (state, { payload, error }) => {
+    if (!error) {
+      return payload;
     }
 
-    return {
-      ...state,
-      data: payload,
-      isLoading: false
-    };
+    return state;
   }
 }, initialState);
 
 // selectors
-export const getExampleData = ({ example }) => example.data;
-export const getExampleLoadingStatus = ({ example }) => example.isLoading;
+export const getExampleData = ({ example }) => example;

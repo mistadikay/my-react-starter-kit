@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import Component from './Dashboard';
-import { actions, getExampleData, getExampleLoadingStatus } from '~/state/example';
+import { actions, getExampleData } from '~/state/example';
+import { getExampleProgress } from '~/state/progress';
 
 const mapStateToProps = (state) => ({
   data: getExampleData(state),
-  isLoading: getExampleLoadingStatus(state)
+  isLoading: getExampleProgress(state)
 });
 
 const mapDispatchToProps = {

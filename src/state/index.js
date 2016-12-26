@@ -16,7 +16,9 @@
 */
 import { combineReducers } from 'redux';
 import example from './example';
+import progress from './progress';
 
 export default combineReducers({
-  example
+  example,
+  progress
 });
