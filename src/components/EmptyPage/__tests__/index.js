@@ -6,7 +6,7 @@ import EmptyPage from '../EmptyPage';
 
 test('EmptyPage', () => {
   const component = shallow(
-    <EmptyPage />
+    <EmptyPage/>
   );
 
   expect(component).toMatchSnapshot();

@@ -6,7 +6,7 @@ import Router from '../Router';
 
 test('Router', () => {
   const component = shallow(
-    <Router />
+    <Router/>
   );
 
   expect(component).toMatchSnapshot();

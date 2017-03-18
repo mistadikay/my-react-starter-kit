@@ -18,8 +18,8 @@ if (process.env !== 'production') {
 }
 
 render(
-  <Provider store={ store }>
-    <Router />
+  <Provider store={store}>
+    <Router/>
   </Provider>,
   document.getElementById('app')
 );

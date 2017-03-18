@@ -6,7 +6,7 @@ import Dashboard from '../Dashboard';
 
 test('Dashboard', () => {
   const component = shallow(
-    <Dashboard />
+    <Dashboard/>
   );
 
   expect(component).toMatchSnapshot();

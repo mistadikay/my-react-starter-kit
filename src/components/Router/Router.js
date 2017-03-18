@@ -19,12 +19,12 @@ export default class extends React.Component {
 
   render() {
     return (
-      <Router history={ browserHistory } onUpdate={ this.props.onUpdate }>
-        <Route name="ADMIN" path="/" component={ App }>
-          <IndexRoute component={ Login } />
-          <Route component={ Dashboard }>
-            <Route path="editor" component={ Editor } />
-            <Route path="*" component={ EmptyPage } />
+      <Router history={browserHistory} onUpdate={this.props.onUpdate}>
+        <Route name="ADMIN" path="/" component={App}>
+          <IndexRoute component={Login}/>
+          <Route component={Dashboard}>
+            <Route path="editor" component={Editor}/>
+            <Route path="*" component={EmptyPage}/>
           </Route>
         </Route>
       </Router>

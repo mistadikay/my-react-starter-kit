@@ -6,7 +6,7 @@ import Editor from '../Editor';
 
 test('Editor', () => {
   const component = shallow(
-    <Editor />
+    <Editor/>
   );
 
   expect(component).toMatchSnapshot();

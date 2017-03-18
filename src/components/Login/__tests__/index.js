@@ -6,7 +6,7 @@ import Login from '../Login';
 
 test('Login', () => {
   const component = shallow(
-    <Login />
+    <Login/>
   );
 
   expect(component).toMatchSnapshot();

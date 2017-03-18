@@ -13,7 +13,7 @@ export default class extends React.Component {
 
   render(): React$Element<*> {
     return (
-      <div className={ styles.app }>
+      <div className={styles.app}>
         { this.props.children }
       </div>
     );
