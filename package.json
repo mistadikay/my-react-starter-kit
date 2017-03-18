@@ -18,7 +18,6 @@
     "pretest": "npm-run-all -s lint build",
     "test": "npm run test:unit",
     "postinstall": "flow-typed install",
-    "precommit": "npm run lint",
     "prepush": "npm test"
   },
   "repository": "mistadikay/react-starter-kit",
