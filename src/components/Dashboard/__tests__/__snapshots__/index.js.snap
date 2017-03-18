@@ -1,4 +1,6 @@
-exports[`test Dashboard 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -17,7 +19,8 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <_class
-        requestExample={[Function]} />,
+        requestExample={[Function]}
+/>,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -62,6 +65,7 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <_class
-    requestExample={[Function]} />,
+    requestExample={[Function]}
+/>,
 }
 `;

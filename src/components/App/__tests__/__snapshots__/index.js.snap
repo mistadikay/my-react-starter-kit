@@ -1,4 +1,6 @@
-exports[`test App 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -7,10 +9,12 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
-    className="app" />,
+    className="app"
+/>,
   "nodes": Array [
     <div
-      className="app" />,
+      className="app"
+/>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -47,10 +51,12 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
-          className="app" />,
+          className="app"
+/>,
         "_debugID": 2,
         "_renderedOutput": <div
-          className="app" />,
+          className="app"
+/>,
       },
       "_renderedNodeType": 0,
       "_rootNodeID": 0,

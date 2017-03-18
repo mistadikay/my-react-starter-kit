@@ -1,4 +1,6 @@
-exports[`test Login 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -9,14 +11,16 @@ ShallowWrapper {
   "node": <Link
     onlyActiveOnIndex={false}
     style={Object {}}
-    to="editor">
+    to="editor"
+>
     Login
 </Link>,
   "nodes": Array [
     <Link
       onlyActiveOnIndex={false}
       style={Object {}}
-      to="editor">
+      to="editor"
+>
       Login
 </Link>,
   ],
@@ -57,14 +61,16 @@ ShallowWrapper {
         "_currentElement": <Link
           onlyActiveOnIndex={false}
           style={Object {}}
-          to="editor">
+          to="editor"
+>
           Login
 </Link>,
         "_debugID": 2,
         "_renderedOutput": <Link
           onlyActiveOnIndex={false}
           style={Object {}}
-          to="editor">
+          to="editor"
+>
           Login
 </Link>,
       },
