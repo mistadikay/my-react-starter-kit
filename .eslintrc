@@ -47,6 +47,9 @@ rules:
   # maybe fix in the future
   react/jsx-filename-extension: 0
   react/jsx-sort-props: 0
+  react/jsx-boolean-value:
+    - 2
+    - never
   no-undefined: 0
 
   # probably PR this
