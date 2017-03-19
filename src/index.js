@@ -3,9 +3,14 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
 
-import Router from '~/components/Router';
-import store from '~/store';
+import { store, history } from '~/store';
+
+import App from '~/components/App';
+import Login from '~/components/Login';
+import Dashboard from '~/components/Dashboard';
 
 import '~/styles/main.global.css';
 import 'normalize-css';
@@ -19,7 +24,14 @@ if (process.env !== 'production') {
 
 render(
   <Provider store={store}>
-    <Router/>
+    <ConnectedRouter history={history}>
+      <App>
+        <Switch>
+          <Route exact path="/" component={Login}/>
+          <Route component={Dashboard}/>
+        </Switch>
+      </App>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('app')
 );

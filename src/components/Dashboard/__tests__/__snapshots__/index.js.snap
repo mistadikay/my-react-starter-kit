@@ -8,28 +8,62 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <div />,
+  "node": <div>
+    <h1>
+        Dashboard
+    </h1>
+    <Link
+        replace={false}
+        to="/"
+    >
+        back
+    </Link>
+    <Switch>
+        <Route
+            component={[Function]}
+            path="/editor"
+        />
+        <Route
+            component={[Function]}
+        />
+    </Switch>
+</div>,
   "nodes": Array [
-    <div />,
+    <div>
+      <h1>
+            Dashboard
+      </h1>
+      <Link
+            replace={false}
+            to="/"
+      >
+            back
+      </Link>
+      <Switch>
+            <Route
+                  component={[Function]}
+                  path="/editor"
+            />
+            <Route
+                  component={[Function]}
+            />
+      </Switch>
+</div>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <_class
-        requestExample={[Function]}
-/>,
+      "_currentElement": <Dashboard />,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": _class {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
-        "props": Object {
-          "requestExample": [Function],
-        },
+        "props": Object {},
         "refs": Object {},
         "state": null,
         "updater": Object {
@@ -50,9 +84,47 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div />,
+        "_currentElement": <div>
+          <h1>
+                    Dashboard
+          </h1>
+          <Link
+                    replace={false}
+                    to="/"
+          >
+                    back
+          </Link>
+          <Switch>
+                    <Route
+                              component={[Function]}
+                              path="/editor"
+                    />
+                    <Route
+                              component={[Function]}
+                    />
+          </Switch>
+</div>,
         "_debugID": 2,
-        "_renderedOutput": <div />,
+        "_renderedOutput": <div>
+          <h1>
+                    Dashboard
+          </h1>
+          <Link
+                    replace={false}
+                    to="/"
+          >
+                    back
+          </Link>
+          <Switch>
+                    <Route
+                              component={[Function]}
+                              path="/editor"
+                    />
+                    <Route
+                              component={[Function]}
+                    />
+          </Switch>
+</div>,
       },
       "_renderedNodeType": 0,
       "_rootNodeID": 0,
@@ -64,8 +136,6 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <_class
-    requestExample={[Function]}
-/>,
+  "unrendered": <Dashboard />,
 }
 `;

@@ -1,6 +1,8 @@
 // @flow
 
 import { createStore, applyMiddleware, compose } from 'redux';
+import { createBrowserHistory } from 'history';
+import { routerMiddleware } from 'react-router-redux';
 import ensureFSAMiddleware from '@meadow/redux-ensure-fsa';
 import immutableStateInvariant from 'redux-immutable-state-invariant';
 import createSagaMiddleware from 'redux-saga';
@@ -11,7 +13,8 @@ import rootSaga from '~/sagas';
 // side effects
 // https://github.com/yelouafi/redux-saga
 const sagaMiddleware = createSagaMiddleware();
-const middleware = [ sagaMiddleware ];
+const history = createBrowserHistory();
+const middleware = [ sagaMiddleware, routerMiddleware(history) ];
 
 if (process.env.NODE_ENV !== 'production') {
   middleware.push(
@@ -30,13 +33,12 @@ if (process.env.NODE_ENV !== 'production') {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 /* eslint-enable no-underscore-dangle */
 
-const store = createStore(
+export const store = createStore(
   rootReducer,
   composeEnhancers(
     applyMiddleware(...middleware)
   )
 );
+export { history };
 
 sagaMiddleware.run(rootSaga);
-
-export default store;

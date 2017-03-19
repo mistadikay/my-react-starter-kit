@@ -15,10 +15,12 @@
   inspired by: https://hackernoon.com/my-journey-toward-a-maintainable-project-structure-for-react-redux-b05dfd999b5#.ufzz18cpz
 */
 import { combineReducers } from 'redux';
+import { routerReducer as router } from 'react-router-redux';
 import example from './example';
 import progress from './progress';
 
 export default combineReducers({
   example,
-  progress
+  progress,
+  router
 });

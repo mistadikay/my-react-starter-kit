@@ -9,7 +9,8 @@ module.exports = {
     react: [
       'react',
       'react-dom',
-      'react-router',
+      'react-router-dom',
+      'react-router-redux',
       'history',
       'redux',
       'redux-actions',

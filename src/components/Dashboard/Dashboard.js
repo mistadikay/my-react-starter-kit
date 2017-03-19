@@ -1,32 +1,18 @@
 import React from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 
-type Props = {
-  data?: Object | null,
-  isLoading?: boolean,
-  requestExample: Function
-};
+import Editor from '~/components/Editor';
+import EmptyPage from '~/components/EmptyPage';
 
-export default class extends React.Component {
-  props: Props
-  static defaultProps = {
-    requestExample() { /* do nothing */ }
-  };
-
-  componentDidMount() {
-    if (!this.props.data) {
-      this.props.requestExample();
-    }
-  }
-
-  render() {
-    if (this.props.isLoading) {
-      return <div>Loading...</div>;
-    }
-
-    return (
-      <div>
-        { JSON.stringify(this.props.data) }
-      </div>
-    );
-  }
+export default function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <Link to="/">back</Link>
+      <Switch>
+        <Route path="/editor" component={Editor}/>
+        <Route component={EmptyPage}/>
+      </Switch>
+    </div>
+  );
 }

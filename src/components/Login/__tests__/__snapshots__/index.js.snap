@@ -8,21 +8,35 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <Link
-    onlyActiveOnIndex={false}
-    style={Object {}}
-    to="editor"
->
-    Login
-</Link>,
-  "nodes": Array [
+  "node": <div>
     <Link
-      onlyActiveOnIndex={false}
-      style={Object {}}
-      to="editor"
->
-      Login
-</Link>,
+        replace={false}
+        to="editor"
+    >
+        Login
+    </Link>
+    <Link
+        replace={false}
+        to="wat"
+    >
+        Non-existing page
+    </Link>
+</div>,
+  "nodes": Array [
+    <div>
+      <Link
+            replace={false}
+            to="editor"
+      >
+            Login
+      </Link>
+      <Link
+            replace={false}
+            to="wat"
+      >
+            Non-existing page
+      </Link>
+</div>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -58,23 +72,37 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <Link
-          onlyActiveOnIndex={false}
-          style={Object {}}
-          to="editor"
->
-          Login
-</Link>,
+        "_currentElement": <div>
+          <Link
+                    replace={false}
+                    to="editor"
+          >
+                    Login
+          </Link>
+          <Link
+                    replace={false}
+                    to="wat"
+          >
+                    Non-existing page
+          </Link>
+</div>,
         "_debugID": 2,
-        "_renderedOutput": <Link
-          onlyActiveOnIndex={false}
-          style={Object {}}
-          to="editor"
->
-          Login
-</Link>,
+        "_renderedOutput": <div>
+          <Link
+                    replace={false}
+                    to="editor"
+          >
+                    Login
+          </Link>
+          <Link
+                    replace={false}
+                    to="wat"
+          >
+                    Non-existing page
+          </Link>
+</div>,
       },
-      "_renderedNodeType": 1,
+      "_renderedNodeType": 0,
       "_rootNodeID": 0,
       "_topLevelWrapper": null,
       "_updateBatchNumber": null,
