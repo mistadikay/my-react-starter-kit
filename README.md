@@ -8,7 +8,7 @@ ___
   - [ ] add plugins for bundle optimization (babili, babel-react-optimize, etc.)
 - [ ] react
   - [ ] add best 3rd-party components
-  - [ ] add preact(-compat) for production build
+  - [x] add preact(-compat) for production build
   - [ ] add recompose
 - [ ] redux
   - [x] basic setup

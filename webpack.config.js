@@ -11,9 +11,11 @@ const InlineEnviromentVariablesPlugin = require('inline-environment-variables-we
 
 const { cssLoader, postcssLoader } = require('./config/loaders');
 
-const srcPath = path.join(__dirname, 'src');
+const root = process.cwd();
+const srcPath = path.join(root, 'src');
+const preactPath = path.resolve(root, 'node_modules/preact-compat/src');
 const isProduction = process.env.NODE_ENV === 'production';
-const destinationPath = path.join(__dirname, 'build');
+const destinationPath = path.join(root, 'build');
 
 const commonConfig = {
   cache: true,
@@ -70,12 +72,21 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
         './src/index'
       ]
     },
+    resolve: {
+      alias: {
+        react: 'preact-compat',
+        'react-dom': 'preact-compat'
+      }
+    },
     module: {
       rules: [
         // *.js => babel + eslint
         {
           test: /\.js$/,
-          include: srcPath,
+          include: [
+            srcPath,
+            preactPath
+          ],
           loaders: [
             'babel-loader?cacheDirectory',
             'eslint-loader'
