@@ -150,6 +150,15 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
       }),
       new ExtractTextPlugin({
         filename: '[name].[hash].css'
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        },
+        sourceMap: true,
+        output: {
+          comments: false
+        }
       })
     ]
   });
