@@ -6,7 +6,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 
 const { cssLoader, postcssLoader } = require('./config/loaders');
@@ -43,7 +42,6 @@ const commonConfig = {
     ]
   },
   plugins: [
-    new FriendlyErrorsWebpackPlugin(),
     new CopyWebpackPlugin([
       {
         from: path.join(srcPath, 'assets/fonts'),
