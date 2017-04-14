@@ -68,23 +68,6 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
       app: [
         './src/polyfills',
         './src/index'
-      ],
-      vendor: [
-        'react',
-        'react-dom',
-        'react-router-dom',
-        'react-router-redux',
-        'history',
-        'redux',
-        'redux-actions',
-        'react-redux',
-        'redux-saga',
-        'classnames',
-        'mirror-creator',
-        'reselect',
-        'shortid',
-        'string-template',
-        'url-join'
       ]
     },
     module: {
@@ -128,7 +111,10 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
       ]
     },
     plugins: [
-      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: (module) => module.context && module.context.indexOf('node_modules') !== -1
+      }),
       new BundleAnalyzerPlugin({
         // Can be `server`, `static` or `disabled`.
         // In `server` mode analyzer will start HTTP server to show bundle report.
