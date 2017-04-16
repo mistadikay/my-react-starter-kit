@@ -3,8 +3,8 @@ ___
 
 ## TODO
 
-- [ ] babel
-  - [ ] switch to babel-preset-env
+- [x] babel
+  - [x] switch to babel-preset-env
   - [x] switch to babili
 - [ ] react
   - [ ] add best 3rd-party components
