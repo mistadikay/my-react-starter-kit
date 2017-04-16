@@ -160,9 +160,12 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
 } else {
   module.exports = merge(commonConfig, {
     devtool: 'eval-source-map',
-    // don't watch node_modules folder to avoid high CPU usage
     devServer: {
+      host: 'localhost',
+      port: 8080,
+      historyApiFallback: true,
       quiet: true,
+      // don't watch node_modules folder to avoid high CPU usage
       watchOptions: {
         ignored: /node_modules/
       }
