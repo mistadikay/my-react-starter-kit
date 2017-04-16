@@ -152,7 +152,7 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
   });
 } else {
   module.exports = merge(commonConfig, {
-    devtool: 'eval-source-map',
+    devtool: 'inline-source-map',
     devServer: {
       host: 'localhost',
       port: 8080,
