@@ -25,9 +25,6 @@
   ],
   "env": {
     "production": {
-      "presets": [
-        "react-optimize"
-      ],
       "plugins": [
         "transform-flow-strip-types"
       ]
