@@ -5,7 +5,7 @@ ___
 
 - [ ] babel
   - [ ] switch to babel-preset-env
-  - [ ] add plugins for bundle optimization (babili, babel-react-optimize, etc.)
+  - [x] add plugins for bundle optimization (babili, babel-react-optimize, etc.)
 - [ ] react
   - [ ] add best 3rd-party components
   - [x] add preact(-compat) for production build

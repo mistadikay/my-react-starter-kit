@@ -5,6 +5,7 @@ const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BabiliWebpackPlugin = require('babili-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 
@@ -146,15 +147,7 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
       new ExtractTextPlugin({
         filename: '[name].[hash].css'
       }),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false
-        },
-        sourceMap: true,
-        output: {
-          comments: false
-        }
-      })
+      new BabiliWebpackPlugin({}, { comments: false })
     ]
   });
 } else {
