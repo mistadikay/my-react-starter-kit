@@ -8,7 +8,7 @@
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:flow": "flow check",
     "lint": "npm-run-all -p lint:*",
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "clean": "rimraf build",
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production webpack",

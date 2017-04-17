@@ -9,6 +9,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from '~/state';
 import rootSaga from '~/sagas';
+import type { Module } from '~/types';
 
 // side effects
 // https://github.com/yelouafi/redux-saga
@@ -42,3 +43,13 @@ export const store = createStore(
 export { history };
 
 sagaMiddleware.run(rootSaga);
+
+declare var module: Module;
+if (module.hot) {
+  // Enable Webpack hot module replacement for reducers
+  module.hot.accept('./state', () => {
+    const nextRootReducer = require('./state').default;
+
+    store.replaceReducer(nextRootReducer);
+  });
+}

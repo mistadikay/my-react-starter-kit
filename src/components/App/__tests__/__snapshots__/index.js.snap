@@ -10,23 +10,45 @@ ShallowWrapper {
   "length": 1,
   "node": <div
     className="app"
-/>,
+>
+    <Switch>
+        <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+        />
+        <Route
+            component={[Function]}
+        />
+    </Switch>
+</div>,
   "nodes": Array [
     <div
       className="app"
-/>,
+>
+      <Switch>
+            <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+            />
+            <Route
+                  component={[Function]}
+            />
+      </Switch>
+</div>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Unknown />,
+      "_currentElement": <App />,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance":  {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {},
@@ -52,11 +74,33 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
           className="app"
-/>,
+>
+          <Switch>
+                    <Route
+                              component={[Function]}
+                              exact={true}
+                              path="/"
+                    />
+                    <Route
+                              component={[Function]}
+                    />
+          </Switch>
+</div>,
         "_debugID": 2,
         "_renderedOutput": <div
           className="app"
-/>,
+>
+          <Switch>
+                    <Route
+                              component={[Function]}
+                              exact={true}
+                              path="/"
+                    />
+                    <Route
+                              component={[Function]}
+                    />
+          </Switch>
+</div>,
       },
       "_renderedNodeType": 0,
       "_rootNodeID": 0,
@@ -68,6 +112,6 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Unknown />,
+  "unrendered": <App />,
 }
 `;

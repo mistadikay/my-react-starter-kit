@@ -25,7 +25,6 @@ const commonConfig = {
   },
   output: {
     pathinfo: true,
-    filename: '[name].[chunkhash].js',
     path: destinationPath,
     publicPath: '/'
   },
@@ -70,6 +69,9 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
         './src/polyfills',
         './src/index'
       ]
+    },
+    output: {
+      filename: '[name].[chunkhash].js'
     },
     resolve: {
       alias: {
@@ -157,7 +159,6 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
       host: 'localhost',
       port: 8080,
       historyApiFallback: true,
-      quiet: true,
       // don't watch node_modules folder to avoid high CPU usage
       watchOptions: {
         ignored: /node_modules/
@@ -165,8 +166,14 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
     },
     entry: [
       './src/polyfills.js',
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
       './src/index.js'
     ],
+    output: {
+      filename: '[name].[hash].js'
+    },
     module: {
       rules: [
         {
