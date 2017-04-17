@@ -127,6 +127,9 @@ if (process.env.ELECTRON_RUN_AS_NODE) {
         name: 'vendor',
         minChunks: (module) => module.context && module.context.indexOf('node_modules') !== -1
       }),
+      new webpack.LoaderOptionsPlugin({
+        minimize: true
+      }),
       new BundleAnalyzerPlugin({
         // Can be `server`, `static` or `disabled`.
         // In `server` mode analyzer will start HTTP server to show bundle report.
